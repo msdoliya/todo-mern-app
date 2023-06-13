@@ -16,11 +16,12 @@ export const Todos = () => {
     const dispatch = useDispatch();
 
     const todos = useSelector(state => state.todos);
+        
     const currentTab = useSelector(state => state.currentTab);
 
     useEffect(() => {
         dispatch(getAllTodos());
-    }, [])
+    }, [todos])
 
     const getTodos = () => {
         if (currentTab === ALL_TODOS) {
